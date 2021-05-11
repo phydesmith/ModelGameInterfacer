@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextArea?>
+<BorderPane prefHeight="1000.0" prefWidth="1000.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.javasmithy.controller.MainController">
+    <top>
+        <HBox spacing="10">
+            <Button fx:id="startButton" onAction="#startCaptureTask" prefWidth="100" prefHeight="50" text="Start"/>
+            <Button fx:id="stopButton" onAction="#stopCaptureTask" prefWidth="100" prefHeight="50" text="Stop"/>
+            <Button fx:id="singleCaptureButton" onAction="#drawCapture" prefWidth="100" prefHeight="50" text="Screen Shot"/>
+            <Button fx:id="continuousCaptureButton" onAction="#toggleContinuous" prefWidth="100" prefHeight="50" text="Continuous"/>
+            <Button fx:id="exitButton" onAction="#exit" prefWidth="100" prefHeight="50" text="Exit"/>
+        </HBox>
+    </top>
+
+    <center>
+        <Canvas fx:id="captureCanvas" height="640" width="640" />
+    </center>
+
+    <bottom>
+        <VBox spacing="10">
+            <TextArea fx:id="imageWriteInfoTextArea" BorderPane.alignment="center" prefHeight="100" prefWidth="500" text="Image Written: " editable="false"/>
+        </VBox>
+    </bottom>
+</BorderPane>
